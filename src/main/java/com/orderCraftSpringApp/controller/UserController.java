@@ -18,7 +18,6 @@ public class UserController {
     @GetMapping("/users")
     public String listUsers(Model model) {
         List<User> users = userService.getAllUsers();
-        // display users list map and display each in sout
         users.forEach(System.out::println);
         model.addAttribute("users", users);
         return "users";
