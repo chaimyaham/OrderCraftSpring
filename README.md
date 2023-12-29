@@ -1,6 +1,15 @@
-# Projet de Gestion de Commandes avec Spring MVC et JPA Hibernate
+# Projet de Gestion de Commandes 
 
 Ce projet a été converti de J2EE à Spring MVC avec l'utilisation de JPA Hibernate pour fournir une solution de gestion de commandes. Il offre des fonctionnalités telles que l'ajout de commandes, l'affichage des commandes existantes, la modification et la suppression de commandes, ainsi que la gestion des clients, produits, et statuts de commande.
+
+
+## Stack Technique
+- Langage de Programmation : Java
+- Frontend : Thymeleaf pour les vues dynamiques
+- Backend : Spring Core (IOC, DI) - Spring MVC - Hibernate - Spring Data JPA
+- Gestion de Dépendances : Apache Maven
+- Base de Données : MySQL
+- Serveur d'Application : Apache Tomcat
 
 ## Fonctionnalités
 
