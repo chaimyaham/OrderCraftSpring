@@ -1,41 +1,45 @@
-# Project Setup Instructions (Windows & MacOS)
+# Projet de Gestion de Commandes avec Spring MVC et JPA Hibernate
 
-Follow these steps to set up the project:
+Ce projet a été converti de J2EE à Spring MVC avec l'utilisation de JPA Hibernate pour fournir une solution de gestion de commandes. Il offre des fonctionnalités telles que l'ajout de commandes, l'affichage des commandes existantes, la modification et la suppression de commandes, ainsi que la gestion des clients, produits, et statuts de commande.
 
-1. **Remove existing JDK and Maven installations:**
-    - Uninstall all JDK installations and delete all JDK files from your computer.
-    - Remove the JDK path from your environment variables.
-    - Uninstall Maven and remove its path from your environment variables.
+## Fonctionnalités
 
-2. **Install JDK and Maven:**
-    - Download JDK 1.8.0_202 from [Oracle's website](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
-    - Download Maven from the [official Maven website](https://maven.apache.org/download.cgi).
-    - Install JDK and Maven on your computer.
-    - Set the paths of JDK and Maven in your environment variables.
+- **Ajout de Commandes :** Permet d'ajouter de nouvelles commandes avec des produits associés.
+- **Affichage des Commandes :** Offre une vue détaillée de la liste des commandes avec les produits correspondants.
+- **Modification et Suppression :** Permet aux utilisateurs autorisés de mettre à jour ou de supprimer des commandes existantes.
+- **Gestion des Clients et Produits :** Permet l'ajout, la modification, et la suppression de clients et de produits.
+- **Statuts de Commande :** Intègre un système de statuts de commande, tels que "En Cours", "Terminée", et "Annulée".
 
-3. **Verify the installations:**
-    - Open the command line and run `mvn -version`. If the installed Maven version is displayed, the installation was successful.
-    - Run `java -version`. If the installed Java version is displayed, the installation was successful.
-    - Ensure that Maven is using JDK 1.8.0_202.
+## Prérequis
 
-4. **Clone the project:**
-    - Run `git clone https://github.com/ayoub-ait-si-ahmad/orderCraftSolution.git`.
-    - Navigate to the project directory with `cd orderCraftSolution`.
+- JDK (Java Development Kit)
+- Serveur Apache Tomcat
+- Base de Données Relationnelle (MySQL)
+- Outil de Gestion de Base de Données (MySQL)
+- Maven (pour la gestion des dépendances)
 
-5. **Configure the database:**
-    - Change the database name, user, and password in the `/WEB-INF/dispatcher-servlet.xml` file. The configuration should look like this:
-      ```xml
-      <!-- DataSource configuration -->
-      <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-          <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-          <property name="url" value="jdbc:mysql://localhost:3306/yourDatabaseName"/>
-          <property name="username" value="yourUsername"/>
-          <property name="password" value="yourPassword"/>
-      </bean>
-      ```
+## Configuration
 
-6. **Build and run the project:**
-    - Run `mvn clean compile package`.
-    - Run `mvn tomcat7:run`.
+1. Clonez le projet depuis le dépôt Git.
+2. Importez le projet dans votre IDE préféré.
+3. Configurez la connexion à la base de données dans le fichier de configuration (`src/main/resources/application.properties`).
+4. Assurez-vous que le serveur Apache Tomcat est configuré dans votre environnement.
 
-Good luck!
+## Structure du Projet
+
+- `src/main/java` : Contient les classes Java, y compris les servlets et les entités.
+- `src/main/webapp` : Contient les fichiers html et les ressources Web.
+- `src/main/resources` : Contient les fichiers de configuration.
+
+## Contributeurs
+
+- Chaimaa MAHY
+
+## Problèmes Connus
+
+- **Gestion des Erreurs Utilisateur :** Les messages d'erreur pour les saisies utilisateur incorrectes ne sont pas toujours clairs. Une amélioration de la gestion des erreurs pourrait améliorer l'expérience utilisateur.
+
+## Améliorations Futures
+
+- **Pagination des Résultats :** Ajouter une fonction de pagination pour la liste des commandes afin de faciliter la navigation, surtout lorsque le nombre de commandes devient important.
+- **Gestion des Stocks :** Intégrer un système de gestion des stocks pour mettre à jour automatiquement la quantité en stock des produits lors de la création ou de la modification de commandes.
