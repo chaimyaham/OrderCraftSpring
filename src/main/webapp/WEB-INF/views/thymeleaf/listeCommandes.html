@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des commandes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Liste des commandes</h1>
+    <div class="row mb-3">
+        <a class="btn btn-outline-success mx-2" th:href="@{/ajouterCommande}">Ajouter une Commande</a>
+        <a class="btn btn-outline-info mx-2" th:href="@{/listeDesProduits}">Voir la liste des Produits</a>
+        <a class="btn btn-outline-dark mx-2" th:href="@{/listeDesClients}">Voir la liste des Client</a>
+    </div>
+
+    <table class="table table-bordered mt-2">
+        <thead>
+        <tr>
+            <th>Commande</th>
+            <th>Client_id</th>
+            <th>Client Name</th>
+            <th>Client Address</th>
+            <th>Date de Commande</th>
+            <th>Status</th>
+
+
+        </tr>
+        </thead>
+        <!-- ... (autre code HTML) ... -->
+
+        <tbody>
+        <tr th:each="commande : ${commandes}">
+            <td th:text="${commande.id}"></td>
+            <td th:text="${commande.client.clientId}"></td>
+            <td th:text="${commande.client.firstName + ' ' + commande.client.lastName}"></td>
+            <td th:text="${commande.client.address}"></td>
+            <td th:text="${commande.date_de_commande}"></td>
+            <td th:text="${commande.statut}"></td>
+
+<!--            <td>-->
+<!--                <ul>-->
+<!--                    <li th:each="produitQuantite : ${commande.produitsQuantites}">-->
+<!--                        <span th:text="${produitQuantite.produit.label}"></span> - -->
+<!--                        <span th:text="${produitQuantite.quantite}"></span> unités-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </td>-->
+
+        </tr>
+        </tbody>
+
+        <!-- ... (autre code HTML) ... -->
+
+    </table>
+
+</div>
+
+<!-- Ajoutez le lien vers Bootstrap JS et jQuery ici -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--<script>-->
+<!--    function confirmDelete() {-->
+<!--        var confirmation = confirm("Êtes-vous sûr de vouloir supprimer cette commande ?");-->
+<!--        if (confirmation) {-->
+<!--            document.getElementById('deleteForm').submit();-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+
+</body>
+</html>

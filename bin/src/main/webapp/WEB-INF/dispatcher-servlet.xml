@@ -26,7 +26,7 @@
     <!-- DataSource configuration -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/artwood_commande"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/springApp"/>
         <property name="username" value="root"/>
         <property name="password" value=""/>
     </bean>
